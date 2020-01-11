@@ -1,13 +1,14 @@
 class ApplicationController < ActionController::Base
-    before_action :configure_permitted_parameters, if: :devise_controller?
+  protect_from_forgery with: :exception
 
-    protected
-      def configure_permitted_parameters
+  require 'users_sanitizer'
 
-        devise_parameter_sanitizer.permit(:sign_in, keys: [:username,:password])
-
-        devise_parameter_sanitizer.permit(:sign_up) do |user_params|
-          user_params.permit(:username, :email, :password, :password_confirmation, :first_name, :last_name,:state,:city,:address,:phone)
-        end
+  protected
+    def devise_parameter_sanitizer
+      if resource_class == User
+        User::ParameterSanitizer.new(User,:user,params)
+      else
+        super
       end
+    end
 end
