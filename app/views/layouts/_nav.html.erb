@@ -16,13 +16,13 @@
           </li>
         <% end %>
 
-        <% if current_page?(admin_home_path)%>
+        <% if current_page?(manage_inventory_path)%>
           <li class="nav-item active">
-            <%= link_to "Manage Inventory", "#", class: "nav-link"%>
+            <%= link_to "Manage Inventory", manage_inventory_path, class: "nav-link"%>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Manage Inventory", "#", class: "nav-link"%>
+            <%= link_to "Manage Inventory", manage_inventory_path, class: "nav-link"%>
           </li>
         <% end %>
 

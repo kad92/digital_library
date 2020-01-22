@@ -1,2 +1,24 @@
-<h1>Hollaa</h1>
-<%= link_to "sign out", destroy_user_session_path, method: :delete%>
+<div class="container p-3 my-3 bg-light text-dark">
+  <h2 class="text-center">Check Availability</h2>
+
+  <%= form_for :test do |f| %>
+    <div class="form-row p-4 align-items-center justify-content-center">
+      <div class="col-auto">
+        <%= f.label :date_checkout, "Checkout", class: "align-items-center"%>
+        <%= f.text_field :date_checkout, type: "date", class: "form-control datepicker", id: "dateCheckout", placeholder: "mm/dd/yyyy"%>
+      </div>
+      <div class="col-auto">
+        <%= f.label :date_checkin, "Checkin", class: "align-items-center"%>
+        <%= f.text_field :date_checkin, type: "date", class: "form-control datepicker", id: "dateCheckin", placeholder: "mm/dd/yyyy"%>
+      </div>
+      <div class="col-auto">
+        <%= f.label :search_book, "Search", class: "align-items-center"%>
+        <%= f.text_field :search_book, type: "text", class: "form-control", id: "searchBook", placeholder: "Search"%>
+      </div>
+      <div class="col-auto">
+        <button type="button" class="btn btn-primary">Check</button>
+      </div>
+    </div>
+  <%end%>
+</div>
+
