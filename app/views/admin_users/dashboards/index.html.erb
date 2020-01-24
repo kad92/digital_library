@@ -2,21 +2,31 @@
   <h2 class="text-center">Check Availability</h2>
 
   <%= form_for :test do |f| %>
-    <div class="form-row p-4 align-items-center justify-content-center">
-      <div class="col-auto">
-        <%= f.label :date_checkout, "Checkout", class: "align-items-center"%>
-        <%= f.text_field :date_checkout, type: "date", class: "form-control datepicker", id: "dateCheckout", placeholder: "mm/dd/yyyy"%>
+    <div class="form-group form-inline p-4 align-items-center justify-content-center">
+      <div class="form-group mx-sm-2">
+      <%= f.label :date_checkout, "From", class: "form-control-label sr-only "%>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">From</span>
+          </div>
+          <%= f.text_field :date_checkout, type: "date", class: "form-control", id: "dateCheckout", placeholder: "mm/dd/yyyy"%>
+        </div>
       </div>
-      <div class="col-auto">
-        <%= f.label :date_checkin, "Checkin", class: "align-items-center"%>
+      <div class="form-group mx-sm-2">
+        <%= f.label :date_checkin, "To", class: "form-control-label sr-only "%>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">To</span>
+          </div>
         <%= f.text_field :date_checkin, type: "date", class: "form-control datepicker", id: "dateCheckin", placeholder: "mm/dd/yyyy"%>
+        </div>
       </div>
-      <div class="col-auto">
-        <%= f.label :search_book, "Search", class: "align-items-center"%>
-        <%= f.text_field :search_book, type: "text", class: "form-control", id: "searchBook", placeholder: "Search"%>
+      <div class="form-group mx-sm-2">
+        <%= f.label :search_book, "Search", class: "form-control-label sr-only"%>
+        <%= f.text_field :search_book, type: "text", class: "form-control", id: "searchBook", placeholder: "Search Book"%>
       </div>
-      <div class="col-auto">
-        <button type="button" class="btn btn-primary">Check</button>
+      <div class="mx-sm-2">
+        <button type="button" class="btn btn-success">Check</button>
       </div>
     </div>
   <%end%>
