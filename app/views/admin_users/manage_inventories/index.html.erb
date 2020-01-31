@@ -1,10 +1,15 @@
 <header class="jumbotron jumbotron-fluid mt-n4">
     <h1 class="mx-2">Inventory</h1>
   </header>
-<div class="row float-right">
-    <%= link_to "Add Book","#", class: "btn btn-success w-50 ml-3"%>
-    <%= link_to "Manage Book Category","#", class: "btn btn-success w-50 ml-3"%>
-</div>
+
+  <div class="row float-right mb-5 mr-5">
+      <div class="col-md-">
+        <%= button_to "Add Book",, class: "btn btn-success btn-md btn-block"%>
+      </div>
+      <div class="col-md-4">
+        <%= button_to "Manage Book Category","#", class: "btn btn-success btn-lgbtn-block"%>
+      </div>
+  </div>
 <div style="clear:both"></div>
 <div class="container">
   <div class="card mb-5">

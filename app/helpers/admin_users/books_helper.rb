@@ -1,0 +1,2 @@
+module AdminUsers::BooksHelper
+end
