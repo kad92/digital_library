@@ -29,6 +29,7 @@ Rails.application.routes.draw do
 
   get '/admin/dashboard' => 'admin_users/dashboards#index', as: :admin_home
   get '/admin/manage_inventory' => 'admin_users/manage_inventories#index', as: :manage_inventory
+  get '/admin/manage_inventory/add_book' => 'admin_users/books#new', as: :add_book
 
   root to: "landing_page#index"
 
