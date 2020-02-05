@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   # root :to => "landing_page#index"
   devise_for :users, controllers: { registrations: "users/registrations", sessions: "users/sessions" }
   devise_for :admin_users, controllers: {registrations: "admin_users/registrations", sessions: "admin_users/sessions"}
@@ -29,9 +28,11 @@ Rails.application.routes.draw do
 
   get '/admin/dashboard' => 'admin_users/dashboards#index', as: :admin_home
   get '/admin/manage_inventory' => 'admin_users/manage_inventories#index', as: :manage_inventory
-  get '/admin/manage_inventory/add_book' => 'admin_users/books#new', as: :add_book
+
+  namespace :admin do
+    resources :books, only:[:new,:update,:edit,:show]
+  end
 
   root to: "landing_page#index"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-end
